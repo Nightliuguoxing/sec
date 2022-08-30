@@ -44,6 +44,7 @@ public class JwtUtil {
     }
 
     public static SUser getAuthentication(String token) {
+        token = token.substring(7);
         Claims claims = Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
         String name = claims.get("name").toString();
         if (name != null && !name.isEmpty()) {

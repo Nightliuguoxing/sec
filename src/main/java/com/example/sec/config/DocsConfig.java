@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DocsConfig {
 
-    private static final String SECURITY_SCHEME_NAME = "Bearer ";
+    private static final String SECURITY_SCHEME_NAME = "Authorization";
 
     @Bean
     public OpenAPI templateOpenAPI() {

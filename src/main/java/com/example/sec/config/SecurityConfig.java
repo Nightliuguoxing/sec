@@ -60,6 +60,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers(
+                        "/",
+                        "/swagger-ui.html",
+                        "/swagger-ui/",
+                        "/*.html",
+                        "/favicon.ico",
+                        "/**/*.html",
+                        "/**/*.css",
+                        "/**/*.js",
+                        "/swagger-resources/**",
+                        "/v3/api-docs/**"
+                )
+                .permitAll()
                 .anyRequest().access("@authService.canAccess(request, authentication)")
                 //.authenticated()
                 .and()

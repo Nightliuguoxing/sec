@@ -10,9 +10,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  */
 public class Test {
     public static void main(String[] args) {
-        String password = "user";
-        String news = new BCryptPasswordEncoder().encode(password);
-        System.out.println(news);
-        // .anyRequest().access("@authService.canAccess(request, authentication)")
+        String str = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJMVUNJRkVSIiwiaWQiOiIyIiwibmFtZSI6InVzZXIiLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlhdCI6MTY2MTgyNzc1MiwiZXhwIjoxNjYyNDMyNTUyfQ.-RPKyPg-5UX-4KBWdhP31IpnuGM62wv9oK7bPQSpZBlXrzHibv-XMgJOXQRdkxO7j3OoMka8WDH8q2t0LcG5fg";
+        String token = str.substring(7);
+        System.out.println(token);
     }
 }
